@@ -1,27 +1,117 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.container {
+  padding: 20px 20px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+// BMI row and columns
+
+.bmi ion-row {
+  background-color: #f7f9fa;
+  border-radius: 5px;
+  margin-bottom: 40px;
 }
 
-#container p {
+.bmi ion-col {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: center;
+  // border: 1px solid black;
+}
+
+.bmi ion-col#bmi-value {
+  background-color: #4f84e8;
+  border-radius: 5px 0 0 5px;
+}
+
+// BMI value section
+
+.bmi #bmi-value h1 {
+  color: white;
   font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+  font-weight: bold;
+  text-align: center;
 }
 
-#container a {
-  text-decoration: none;
+.bmi #bmi-message h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.bmi #bmi-message p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+// In progress section
+
+#pb img {
+  height: 20px;
+  margin-right: 10px;
+  width: 20px;
+}
+
+#pb p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#pb span {
+  color: #acacac;
+}
+
+#pb ion-progress-bar {
+  margin-top: 20px;
+
+  --buffer-background: #f7f9fa;
+  --progress-background: #ff986a;
+}
+
+// Summary section
+
+.sum ion-row {
+  margin: 40px auto;
+}
+
+.sum ion-col {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: center;
+}
+
+ion-col#sum-eaten {
+  background-color: #fff9f0;
+}
+
+ion-col#sum-burned {
+  background-color: #f0faff;
+}
+
+.sum h1 {
+  color: #ff986a;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.sum span h1 {
+  color: #4f84e8;
+}
+
+.sum p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+ion-button {
+  background-color: #4f84e8;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  height: 60px;
+  width: 100%;
 }

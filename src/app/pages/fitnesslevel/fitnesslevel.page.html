@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="physical"
+        text=""
+        icon="chevron-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-progress-bar color="primary" value="0.5"></ion-progress-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #physicalForm="ngForm" novalidate>
+    <ion-list>
+      <h1>
+        Workout<br />
+        Frequency
+      </h1>
+
+      <!-- Never button -->
+      <div id="never" (click)="setNever()">
+        <ion-item class="ion-no-margin ion-no-padding" lines="none">
+          <img src="../../../assets/images/Never@3x.png" alt="" />
+          <p>Never</p>
+        </ion-item>
+      </div>
+
+      <!-- Sometimes button -->
+      <div id="sometimes" (click)="setSometimes()">
+        <ion-item class="ion-no-margin ion-no-padding" lines="none">
+          <img src="../../../assets/images/Sometimes@3x.png" alt="" />
+          <p>Sometimes</p>
+        </ion-item>
+      </div>
+
+      <!-- Moderately button -->
+      <div id="moderately" (click)="setModerately()">
+        <ion-item class="ion-no-margin ion-no-padding" lines="none">
+          <img src="../../../assets/images/Pushup@3x.png" alt="" />
+          <p>Moderately</p>
+        </ion-item>
+      </div>
+
+      <!-- Daily button -->
+      <div id="daily" (click)="setDaily()">
+        <ion-item class="ion-no-margin ion-no-padding" lines="none">
+          <img src="../../../assets/images/Moderately@3x.png" alt="" />
+          <p>Daily</p>
+        </ion-item>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>

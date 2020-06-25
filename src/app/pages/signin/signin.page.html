@@ -1,0 +1,60 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="intro"
+        text=""
+        icon="chevron-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #loginForm="ngForm" novalidate>
+    <ion-list>
+      <h1>
+        Sign in to<br />
+        Calorie Tracker
+      </h1>
+
+      <!-- User's username input -->
+      <ion-text color="danger">
+        <p [hidden]="username || submitted == false">Username is required</p>
+      </ion-text>
+      <ion-input
+        placeholder="Username"
+        [(ngModel)]="username"
+        name="username"
+        type="text"
+        autocapitalize="off"
+        required
+      >
+      </ion-input>
+
+      <!-- User's password input -->
+      <ion-text color="danger">
+        <p [hidden]="password || submitted == false">Password is required</p>
+      </ion-text>
+      <ion-input
+        placeholder="Password"
+        [(ngModel)]="password"
+        name="password"
+        type="password"
+        autocapitalize="off"
+        required
+      ></ion-input>
+    </ion-list>
+
+    <div id="btn">
+      <ion-button
+        (click)="signIn(loginForm)"
+        [disabled]
+        type="submit"
+        fill="clear"
+        expand="block"
+        >Sign In
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

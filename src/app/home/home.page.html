@@ -1,20 +1,55 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title size="small">Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" class="ion-no-border">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Home, {{name}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="container">
+    <!-- User BMI indicator -->
+    <ion-grid class="bmi">
+      <ion-row class="ion-align-items-center">
+        <ion-col id="bmi-value" size="3">
+          <h1 class="ion-no-margin">{{bmi}}</h1>
+        </ion-col>
+        <ion-col id="bmi-message" class="ion-padding-start">
+          <h2 class="ion-no-margin">BMI Score</h2>
+          <p class="ion-no-margin">{{bmiMessage}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- User calorie progress bar -->
+    <div id="pb">
+      <ion-item class="ion-no-margin ion-no-padding" lines="none">
+        <img src="../../assets/images/Fire@3x.png" alt="" />
+        <p>In Progress - <span>365 kcals remaining</span></p>
+      </ion-item>
+      <ion-progress-bar color="primary" value="0.25"></ion-progress-bar>
+    </div>
+
+    <!-- Calorie summary -->
+    <ion-grid class="sum">
+      <ion-row class="ion-align-items-center">
+        <ion-col id="sum-eaten">
+          <h1 class="ion-no-margin">1284</h1>
+          <p class="ion-no-margin">Kcal eaten</p>
+        </ion-col>
+        <ion-col id="sum-burned" class="ion-margin-start">
+          <span><h1 class="ion-no-margin">892</h1></span>
+          <p class="ion-no-margin">Kcal burned</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="signout">
+      <ion-button fill="clear" (click)="signOut()">Sign Out</ion-button>
+    </div>
   </div>
 </ion-content>

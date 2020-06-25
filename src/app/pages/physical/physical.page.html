@@ -1,0 +1,105 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-progress-bar color="primary" value="0.25"></ion-progress-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #physicalForm="ngForm" novalidate>
+    <ion-list>
+      <h1>
+        Physical<br />
+        Information
+      </h1>
+
+      <div id="label">
+        <ion-label>Date of birth & Gender</ion-label>
+      </div>
+
+      <!-- User's date of birth input -->
+      <ion-text color="danger">
+        <p [hidden]="birth || submitted == false">Date of birth is required</p>
+      </ion-text>
+      <ion-datetime
+        class="ion-align-items-center"
+        displayFormat="MMM DD, YYYY"
+        min="1950-12-31"
+        max="2008-12-31"
+        placeholder="Date of Birth"
+        [(ngModel)]="birth"
+        name="birth"
+        required
+      ></ion-datetime>
+
+      <!-- User's gender input -->
+      <ion-text color="danger">
+        <p [hidden]="gender || submitted == false">Gender is required</p>
+      </ion-text>
+      <ion-select
+        class="custom-options ion-align-items-center"
+        interface="action-sheet"
+        placeholder="Gender"
+        [(ngModel)]="gender"
+        name="gender"
+        required
+      >
+        <ion-select-option value="true">Male</ion-select-option>
+        <ion-select-option value="false">Female</ion-select-option>
+      </ion-select>
+
+      <div id="label">
+        <ion-label>Height & Weight</ion-label>
+      </div>
+
+      <!-- User's height input -->
+      <ion-text color="danger">
+        <p [hidden]="height || submitted == false">Height is required</p>
+      </ion-text>
+
+      <p>
+        Height is <span>{{ height }}</span> cm or <span>{{ heightFI }}</span> ft
+      </p>
+      <div id="slider">
+        <ion-range
+          min="137"
+          max="213"
+          color="medium"
+          pin="false"
+          [(ngModel)]="height"
+          name="height"
+          required
+          (ionChange)="getFeet()"
+        ></ion-range>
+      </div>
+
+      <!-- User's weight input -->
+      <ion-text color="danger">
+        <p [hidden]="weight || submitted == false">Weight is required</p>
+      </ion-text>
+
+      <p>
+        Weight is <span>{{ weight }}</span> kg or
+        <span>{{ weightLbs }}</span> lbs
+      </p>
+      <div id="slider">
+        <ion-range
+          min="28"
+          max="102"
+          color="medium"
+          pin="false"
+          [(ngModel)]="weight"
+          name="weight"
+          required
+          (ionChange)="getPounds()"
+        ></ion-range>
+      </div>
+
+      <ion-button
+        fill="clear"
+        expand="block"
+        (click)="savePhysical(physicalForm)"
+        >Continue</ion-button
+      >
+    </ion-list>
+  </form>
+</ion-content>

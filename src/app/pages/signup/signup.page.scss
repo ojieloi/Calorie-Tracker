@@ -1,0 +1,44 @@
+ion-back-button {
+  --icon-font-size: 20px;
+  --icon-margin-start: 5px;
+}
+
+form {
+  padding: 20px 30px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: left;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+ion-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+ion-input {
+  background-color: #f7f9fa;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  height: 60px;
+  margin-bottom: 15px;
+
+  --padding-start: 20px;
+  --placeholder-color: #a4a4a4;
+}
+
+ion-button {
+  background-color: #4f84e8;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  height: 60px;
+  width: 100%;
+}

@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="fitnessgoal"
+        text=""
+        icon="chevron-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-progress-bar color="primary" value="1.0"></ion-progress-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <h1>
+      Choose a <br />
+      profile emoji
+    </h1>
+
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-margin-bottom">
+        <ion-col class="ion-no-padding ion-margin-end">
+          <ion-button class="ion-no-margin" fill="clear" (click)="setLion()">
+            <img src="../../../assets/images/Lion@3x.png" alt="" />
+          </ion-button>
+        </ion-col>
+
+        <ion-col class="ion-no-padding">
+          <ion-button class="ion-no-margin" fill="clear" (click)="setZebra()">
+            <img src="../../../assets/images/Zebra@3x.png" alt="" />
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-align-items-center">
+        <ion-col class="ion-no-padding ion-margin-end">
+          <ion-button class="ion-no-margin" fill="clear" (click)="setSkull()">
+            <img src="../../../assets/images/Skull@3x.png" alt="" />
+          </ion-button>
+        </ion-col>
+
+        <ion-col class="ion-no-padding">
+          <ion-button class="ion-no-margin" fill="clear" (click)="setOwl()">
+            <img src="../../../assets/images/Owl@3x.png" alt="" />
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>

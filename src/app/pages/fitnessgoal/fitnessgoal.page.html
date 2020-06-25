@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="fitnesslevel"
+        text=""
+        icon="chevron-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-progress-bar color="primary" value="0.75"></ion-progress-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <h1>
+      Fitness<br />
+      Goal
+    </h1>
+
+    <!-- Lose weight button -->
+    <div id="lose" (click)="setLose()">
+      <ion-item class="ion-no-margin ion-no-padding" lines="none">
+        <img src="../../../assets/images/Sometimes@3x.png" alt="" />
+        <p>Lose weight</p>
+      </ion-item>
+    </div>
+
+    <!-- Gain weight button -->
+    <div id="gain" (click)="setGain()">
+      <ion-item class="ion-no-margin ion-no-padding" lines="none">
+        <img src="../../../assets/images/Never@3x.png" alt="" />
+        <p>Gain weight</p>
+      </ion-item>
+    </div>
+
+    <!-- Be fit and healthy button -->
+    <div id="fit" (click)="setFit()">
+      <ion-item class="ion-no-margin ion-no-padding" lines="none">
+        <img src="../../../assets/images/Pushup@3x.png" alt="" />
+        <p>Be fit and healthy</p>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
