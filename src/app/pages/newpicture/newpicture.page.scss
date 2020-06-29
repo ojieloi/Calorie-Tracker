@@ -1,0 +1,40 @@
+ion-back-button {
+  --icon-font-size: 20px;
+  --icon-margin-start: 5px;
+}
+
+ion-title {
+  font-size: 14px;
+}
+
+ion-list {
+  padding: 30px 30px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: left;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+ion-col {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+}
+
+ion-button {
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+}

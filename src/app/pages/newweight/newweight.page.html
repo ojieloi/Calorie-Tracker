@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="profile/"
+        text=""
+        icon="chevron-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Weight</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #physicalForm="ngForm" novalidate>
+    <ion-list>
+      <h3>
+        Changing this will also change your BMI, as well as your required
+        calorie goal
+      </h3>
+
+      <!-- User's weight input -->
+      <ion-text color="danger">
+        <p [hidden]="weight || submitted == false">Weight is required</p>
+      </ion-text>
+
+      <p>
+        Weight is <span>{{ weight }}</span> kg or
+        <span>{{ weightLbs }}</span> lbs
+      </p>
+      <div id="slider">
+        <ion-range
+          min="28"
+          max="102"
+          color="medium"
+          pin="false"
+          [(ngModel)]="weight"
+          name="weight"
+          required
+          (ionChange)="getPounds()"
+        ></ion-range>
+      </div>
+
+      <ion-button fill="clear" expand="block" (click)="update(physicalForm)"
+        >Save</ion-button
+      >
+    </ion-list>
+  </form>
+</ion-content>

@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import * as firebase from "firebase";
-import { NavController } from "@ionic/angular";
+import { NavController, ModalController } from "@ionic/angular";
+import { Router } from "@angular/router";
+import { AddmealPage } from "../modals/addmeal/addmeal.page";
 
 @Component({
   selector: "app-home",
@@ -8,14 +10,21 @@ import { NavController } from "@ionic/angular";
   styleUrls: ["home.page.scss"],
 })
 export class HomePage {
+  day: any;
   bmi: number;
   bmiMessage: string;
 
   name: string;
+  displayPicture: string;
 
-  constructor(private nav: NavController) {
+  constructor(
+    private nav: NavController,
+    private router: Router,
+    private modalController: ModalController
+  ) {
     this.getUserInfo();
     this.getPhysicalInfo();
+    this.getDay();
   }
 
   ngOnInit() {
@@ -29,6 +38,53 @@ export class HomePage {
     });
   }
 
+  async profile() {
+    firebase.auth().onAuthStateChanged((user) => {
+      var userId;
+      if (user != null) {
+        userId = user.uid;
+      }
+      this.router.navigateByUrl(`/profile/${userId}`);
+    });
+  }
+
+  async addMeal() {
+    const modal = await this.modalController.create({
+      component: AddmealPage,
+    });
+    return await modal.present();
+  }
+
+  async getDay() {
+    var weekday = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    var month = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    var today = new Date();
+    var wd = weekday[today.getDay()];
+    var mon = month[today.getMonth()];
+    this.day = wd + ", " + mon + " " + today.getDate();
+  }
+
   async getUserInfo() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user != null) {
@@ -39,6 +95,7 @@ export class HomePage {
 
             // Binding user data to elements
             this.name = user.displayName;
+            this.displayPicture = user.displayPicture;
           }
         });
       }
@@ -91,18 +148,5 @@ export class HomePage {
         this.bmiMessage = "This indicates an obese health.";
       }
     }
-  }
-
-  async signOut() {
-    var user = firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        console.log("User is signing out: ", user);
-        this.nav.navigateBack("signin");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   }
 }

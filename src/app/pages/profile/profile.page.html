@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="home"
+        text=""
+        icon="chevron-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <!-- User's profile picture -->
+    <ion-grid class="profile">
+      <ion-row class="ion-align-items-center">
+        <ion-col id="picture" size="4">
+          <img src="../../../assets/images/{{displayPicture}}" alt="" />
+        </ion-col>
+        <ion-col id="name" class="ion-padding-start">
+          <h2 class="ion-no-margin">{{name}}</h2>
+          <ion-button fill="clear" mode="ios" (click)="changeEmoji()"
+            >Change emoji</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- User's health -->
+    <ion-grid class="health">
+      <ion-item class="ion-no-margin ion-no-padding" lines="none">
+        <ion-label slot="start">Health</ion-label>
+        <ion-button slot="end" fill="clear" mode="ios" (click)="changeWeight()"
+          >Update</ion-button
+        >
+      </ion-item>
+
+      <ion-row class="ion-align-items-center">
+        <ion-col id="weight">
+          <h2 class="ion-no-margin">{{weight}} kg</h2>
+          <p class="ion-no-margin">Weight</p>
+        </ion-col>
+        <ion-col id="goal" class="ion-margin-start">
+          <h2 class="ion-no-margin">{{height}} cm</h2>
+          <p class="ion-no-margin">Height</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="signout">
+      <ion-button fill="clear" (click)="signOut()">Sign Out</ion-button>
+    </div>
+  </div>
+</ion-content>

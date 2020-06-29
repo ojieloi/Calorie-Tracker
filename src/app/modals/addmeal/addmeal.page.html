@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon name="chevron-down-outline" size="small"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Add Meal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #mealForm="ngForm" novalidate>
+    <ion-list>
+      <h1>
+        What did <br />
+        you eat today?
+      </h1>
+
+      <!-- Meal name input -->
+      <ion-text color="danger">
+        <p [hidden]="name || submitted == false">Meal name is required</p>
+      </ion-text>
+      <ion-input
+        placeholder="Meal name"
+        [(ngModel)]="name"
+        name="name"
+        type="text"
+        autocapitalize="on"
+        required
+      ></ion-input>
+
+      <!-- Meal category input -->
+      <ion-text color="danger">
+        <p [hidden]="category || submitted == false">Category is required</p>
+      </ion-text>
+      <ion-select
+        class="custom-options ion-align-items-center"
+        interface="action-sheet"
+        placeholder="Select One"
+        [(ngModel)]="category"
+        name="category"
+      >
+        <ion-select-option value="Breakfast">Breakfast</ion-select-option>
+        <ion-select-option value="Snack">Snack</ion-select-option>
+        <ion-select-option value="Lunch">Lunch</ion-select-option>
+        <ion-select-option value="Dinner">Dinner</ion-select-option>
+      </ion-select>
+
+      <!-- Meal portion input -->
+      <ion-text color="danger">
+        <p [hidden]="portion || submitted == false">Portion is required</p>
+      </ion-text>
+      <ion-input
+        placeholder="Portion"
+        [(ngModel)]="portion"
+        name="portion"
+        required
+      ></ion-input>
+
+      <!-- Meal calorie input -->
+      <ion-text color="danger">
+        <p [hidden]="calorie || submitted == false">
+          Calorie is required
+        </p>
+      </ion-text>
+      <ion-input
+        placeholder="Calories"
+        [(ngModel)]="calorie"
+        name="calorie"
+        required
+      >
+      </ion-input>
+    </ion-list>
+
+    <div id="btn">
+      <ion-button
+        (click)="add(mealForm)"
+        disabled
+        type="submit"
+        fill="clear"
+        expand="block"
+        >Add Meal
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

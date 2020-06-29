@@ -2,6 +2,41 @@
   padding: 20px 20px;
 }
 
+ion-header ion-button {
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+}
+
+ion-header img {
+  height: 20px;
+  width: 20px;
+}
+
+ion-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+// Header and date
+
+#header {
+  margin-bottom: 20px;
+}
+
+#header p {
+  color: #4f84e8;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#header h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 // BMI row and columns
 
 .bmi ion-row {
@@ -13,7 +48,7 @@
 .bmi ion-col {
   display: flex;
   flex-direction: column;
-  height: 100px;
+  height: 80px;
   justify-content: center;
   // border: 1px solid black;
 }
@@ -35,7 +70,7 @@
 .bmi #bmi-message h2 {
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .bmi #bmi-message p {
@@ -44,12 +79,6 @@
 }
 
 // In progress section
-
-#pb img {
-  height: 20px;
-  margin-right: 10px;
-  width: 20px;
-}
 
 #pb p {
   font-size: 14px;
@@ -61,16 +90,26 @@
 }
 
 #pb ion-progress-bar {
-  margin-top: 20px;
+  margin-top: 10px;
 
   --buffer-background: #f7f9fa;
   --progress-background: #ff986a;
 }
 
-// Summary section
+// Calorie Summary section
+
+ion-grid.sum {
+  margin: 40px auto;
+}
+
+.sum p,
+.meals p {
+  font-size: 14px;
+  font-weight: 600;
+}
 
 .sum ion-row {
-  margin: 40px auto;
+  margin: 10px auto 0;
 }
 
 .sum ion-col {
@@ -92,7 +131,7 @@ ion-col#sum-burned {
 
 .sum h1 {
   color: #ff986a;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -101,17 +140,23 @@ ion-col#sum-burned {
   color: #4f84e8;
 }
 
-.sum p {
+#sum-eaten p,
+#sum-burned p {
   font-size: 14px;
   font-weight: 400;
 }
 
-ion-button {
-  background-color: #4f84e8;
-  border-radius: 5px;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  height: 60px;
-  width: 100%;
+// Meals section {
+
+.meals ion-button {
+  background: none;
+  color: black;
+  font-size: 12px;
+  font-weight: 500;
+  height: auto;
+}
+
+.meals ion-icon {
+  height: 20px;
+  width: 20px;
 }

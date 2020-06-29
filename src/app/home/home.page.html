@@ -1,17 +1,20 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-title size="small">Home</ion-title>
+<ion-header>
+  <ion-toolbar mode="md">
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="profile()">
+        <img src="../../assets/images/{{displayPicture}}" alt="" />
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense" class="ion-no-border">
-    <ion-toolbar>
-      <ion-title size="large">Home, {{name}}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div class="container">
+    <div id="header">
+      <p class="ion-no-margin">{{day}}</p>
+      <h1 class="ion-no-margin">Hi, {{name}}</h1>
+    </div>
     <!-- User BMI indicator -->
     <ion-grid class="bmi">
       <ion-row class="ion-align-items-center">
@@ -28,14 +31,14 @@
     <!-- User calorie progress bar -->
     <div id="pb">
       <ion-item class="ion-no-margin ion-no-padding" lines="none">
-        <img src="../../assets/images/Fire@3x.png" alt="" />
-        <p>In Progress - <span>365 kcals remaining</span></p>
+        <p>In Progress: <span>365 kcals remaining</span></p>
       </ion-item>
       <ion-progress-bar color="primary" value="0.25"></ion-progress-bar>
     </div>
 
     <!-- Calorie summary -->
     <ion-grid class="sum">
+      <p>Summary</p>
       <ion-row class="ion-align-items-center">
         <ion-col id="sum-eaten">
           <h1 class="ion-no-margin">1284</h1>
@@ -48,8 +51,18 @@
       </ion-row>
     </ion-grid>
 
-    <div class="signout">
-      <ion-button fill="clear" (click)="signOut()">Sign Out</ion-button>
-    </div>
+    <!-- Meals today -->
+    <ion-grid class="meals">
+      <ion-item class="ion-no-margin ion-no-padding" lines="none">
+        <p>Meals Today</p>
+
+        <ion-buttons slot="end">
+          <ion-button fill="clear" mode="ios" (click)="addMeal()">
+            <ion-icon name="add-circle-outline" color="dark"></ion-icon>
+            &nbsp; Add Meal
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-grid>
   </div>
 </ion-content>

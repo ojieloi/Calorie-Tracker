@@ -35,16 +35,54 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'fitnesslevel',
-    loadChildren: () => import('./pages/fitnesslevel/fitnesslevel.module').then( m => m.FitnesslevelPageModule)
+    path: "fitnesslevel",
+    loadChildren: () =>
+      import("./pages/fitnesslevel/fitnesslevel.module").then(
+        (m) => m.FitnesslevelPageModule
+      ),
   },
   {
-    path: 'fitnessgoal',
-    loadChildren: () => import('./pages/fitnessgoal/fitnessgoal.module').then( m => m.FitnessgoalPageModule)
+    path: "fitnessgoal",
+    loadChildren: () =>
+      import("./pages/fitnessgoal/fitnessgoal.module").then(
+        (m) => m.FitnessgoalPageModule
+      ),
   },
   {
-    path: 'emoji',
-    loadChildren: () => import('./pages/emoji/emoji.module').then( m => m.EmojiPageModule)
+    path: "emoji",
+    loadChildren: () =>
+      import("./pages/emoji/emoji.module").then((m) => m.EmojiPageModule),
+  },
+  {
+    path: "profile/:id",
+    loadChildren: () =>
+      import("./pages/profile/profile.module").then((m) => m.ProfilePageModule),
+  },
+  {
+    path: "addmeal",
+    loadChildren: () =>
+      import("./modals/addmeal/addmeal.module").then(
+        (m) => m.AddmealPageModule
+      ),
+  },
+  {
+    path: "newweight",
+    loadChildren: () =>
+      import("./pages/newweight/newweight.module").then(
+        (m) => m.NewweightPageModule
+      ),
+  },
+  {
+    path: "newgoal",
+    loadChildren: () =>
+      import("./pages/newgoal/newgoal.module").then((m) => m.NewgoalPageModule),
+  },
+  {
+    path: "newpicture",
+    loadChildren: () =>
+      import("./pages/newpicture/newpicture.module").then(
+        (m) => m.NewpicturePageModule
+      ),
   },
 ];
 
